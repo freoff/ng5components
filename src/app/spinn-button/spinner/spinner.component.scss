@@ -1,0 +1,33 @@
+.spinner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1rem;
+  text-align: center;
+}
+
+.spinner > div {
+  width: .45em;
+  height: .45em;
+  //background-color: #fff;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 2s infinite ease-in-out both;
+  margin-right: 5px;
+  @for $i from 1 to 10 {
+    &:nth-child(#{$i}){
+      animation-delay: (-1.80+$i*0.20)+s;
+    }
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  } 40% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}
